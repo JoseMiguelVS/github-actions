@@ -1,0 +1,12 @@
+name: Prueba ejecucion de script de python
+run-name: ${{ github.actor }} esta probando la ejecucion de un script de python
+on: [push]
+
+jobs:
+    ejecuta-python:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "inicia actions"
+            - run: python --version
+            - run: ls -al
+            - run: python app.py
