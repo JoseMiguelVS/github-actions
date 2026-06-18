@@ -17,8 +17,8 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - run: echo "inicia actions"
-            - run: Config deno
-            - uses: denoland/setup-deno@v2
+            - name: Config deno
+              uses: denoland/setup-deno@v2
             - run: deno --version
             - name: Check out repository code
               uses: actions/checkout@v6
