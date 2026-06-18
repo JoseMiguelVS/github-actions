@@ -12,3 +12,15 @@ jobs:
               uses: actions/checkout@v6
             - run: ls -al
             - run: node app.js
+
+    ejecuta-deno:
+        runs-on: ubuntu-latest
+        steps:
+            - run: echo "inicia actions"
+            - run: Config deno
+            - uses: denoland/setup-deno@v2
+            - run: deno --version
+            - name: Check out repository code
+              uses: actions/checkout@v6
+            - run: ls -al
+            - run: deno app.js
