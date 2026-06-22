@@ -1,0 +1,28 @@
+name: Expression
+run-name: ${{ github.actor }} probando expresiones en GitHub Actions
+on:
+  workflow_dispatch:
+    inputs:
+        edad:
+            description: 'Edad'
+            required: false
+            type: integer
+            
+        nombre:
+            description: 'Nombre'
+            required: true
+            type: string
+
+jobs:
+  mayor:
+    if: ${{ inputs.edad >= 18 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: run script
+        run: echo ${{ inputs.nombre }} es mayor de edad
+  menor:
+    if: ${{ inputs.edad < 18 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: run script
+        run: echo ${{ inputs.nombre }} es menor de edad
