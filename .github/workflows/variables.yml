@@ -17,6 +17,4 @@ jobs:
               run: echo "El puerto es $PORT"
               env: 
                 First_Name: Mike
-            - run: echo "El nombre es ${{ env.First_Name }}"
-            - name: Leyendp variable de repositorio
-              run: echo "El nombre del repositorio es ${{ vars.NOMBRE }}"
+            - run: echo "El nombre es ${{ vars.First_Name }}"
