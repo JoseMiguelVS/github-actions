@@ -1,0 +1,22 @@
+name: Saludo usando variables de entorno
+run-name: ${{ github.actor }} probando variables de entorno en GitHub Actions
+on: 
+    [push, workflow_dispatch]
+env:
+    DAY_OF_WEEK:  Lunes 15
+    MONTH:  Junio 
+jobs: 
+    variables:
+        runs-on: ubuntu-latest
+        env:
+            PORT: 8080
+        steps:
+            - name: Mostrar fechas
+              run:  echo "Hoy es $DAY_OF_WEEK del mes de $MONTH"
+            - name: Mostrar puerto
+              run: echo "El puerto es $PORT"
+              env: 
+                First_Name: Mike
+            - run: echo "El nombre es ${{ env.First_Name }}"
+            - name: Leyendp variable de repositorio
+              run: echo "El nombre del repositorio es ${{ vars.NOMBRE }}"
