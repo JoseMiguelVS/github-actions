@@ -1,16 +1,17 @@
 name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+run-name: ${{ github.actor }} is testing out GitHub Actions
 on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🎉 Hola world"
+      - run: echo "Hola world"
       - run: echo "Escribe en un archivo" > hola.txt
       - run: ls -al
       - run: cat hola.txt
       - run: rm -rf hola.txt
       - run: ls -al
+
       - name: Clona proyecto
         uses: actions/checkout@v6
       - name: Definir variable de entorno

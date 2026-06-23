@@ -26,3 +26,11 @@ jobs:
     steps:
       - name: run script
         run: echo ${{ inputs.nombre }} es menor de edad
+
+  ejecuta-python-condicionales:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Edad=${{ inputs.edad }}" >> $GITHUB_ENV
+      - run: echo "Nombre=${{ inputs.nombre }}" >> $GITHUB_ENV
+      - uses: actions/checkout@v6
+      - run: python condicionales.py
