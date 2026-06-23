@@ -11,3 +11,9 @@ jobs:
       - run: cat hola.txt
       - run: rm -rf hola.txt
       - run: ls -al
+      - name: Clona proyecto
+        uses: actions/checkout@v6
+      - name: Definir variable de entorno
+        run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+      - run: echo $PATH
+      - run: python app.py
