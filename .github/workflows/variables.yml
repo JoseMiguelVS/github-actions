@@ -17,4 +17,8 @@ jobs:
               run: echo "El puerto es $PORT"
               env: 
                 First_Name: Mike
-            - run: echo "El nombre es $First_Name"
+            - run: echo "El nombre es ${{ vars.USERNAME }}"
+              env:
+                NOMBRE: Hola
+            - name: Leyendo variable de repositorio
+              run: echo "El nombre del repositorio es ${{ vars.NOMBRE }}"
