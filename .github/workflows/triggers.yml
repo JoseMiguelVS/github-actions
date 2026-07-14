@@ -1,32 +1,32 @@
-name: Events triggers
-run-name: ${{ github.actor }} probando los triggers de eventos en GitHub Actions    
-on:
-  push:
-    branches:
-      - main
-      - feat/**
+# name: Events triggers
+# run-name:  probando los triggers de eventos en GitHub Actions    
+# on:
+#   push:
+#     branches:
+#       - main
+#       - feat/**
 
-  workflow_dispatch:
-    inputs:
-        tags:
-          description: 'opcional'
-          required: false
-          type: boolean
-        environment:
-          description: 'objetivo'
-          type: string
-          required: true
-  issues:
-    types: [opened, edited]
+#   workflow_dispatch:
+#     inputs:
+#         tags:
+#           description: 'opcional'
+#           required: false
+#           type: boolean
+#         environment:
+#           description: 'objetivo'
+#           type: string
+#           required: true
+#   issues:
+#     types: [opened, edited]
 
-  schedule:
-    - cron: '50 * * * *'
+#   schedule:
+#     - cron: '50 * * * *'
 
-jobs:
-  probando-triggers:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Inicia Job
-        run: echo "Jobs iniciando"
-      - run: echo "ola"
-      - run: echo "El job trabajando en el evento ${{ github.event_name }}"
+# jobs:
+#   probando-triggers:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Inicia Job
+#         run: echo "Jobs iniciando"
+#       - run: echo "ola"
+#       - run: echo "El job trabajando en el evento ${{ github.event_name }}"
